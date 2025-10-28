@@ -14,5 +14,11 @@ ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
 # Expose port
 EXPOSE 5678
 
+
+# This line is the key fix 👇
+ENTRYPOINT ["tini", "--"]
 # Start n8n
 CMD ["n8n", "start"]
+
+
+
